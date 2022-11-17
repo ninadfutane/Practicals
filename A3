@@ -75,3 +75,32 @@ plt.title("Temperature vs Year")
 plt.xlabel("Year")
 plt.ylabel("Temperature")
 plt.show()
+
+#To find top 10 temperature 
+#As per 'Annual col' find 'top 10' temp data
+top_10_data = trainData.nlargest(10, "ANNUAL")
+ #Mentioned figure size 
+plt.figure(figsize=(14,12))
+plt.title("Top 10 temperature records")
+#In barplot x & y axis year & temp resp
+sns.barplot(x=top_10_data.YEAR, y=top_10_data.ANNUAL)
+#It is found that highest record of temperature is in 2016 roughly 
+#about 32 degree Celsius
+----------------------------------------------------------------------------------------
+#Analyse 2016 data
+data_2016 = trainData[trainData["YEAR"]==2016]
+ #x axis temp data in array format
+xticks = np.array(data_2016[["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]].values)
+ #y axis months labels
+yticks = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+
+#To plot the graph
+#Mentioned figsize
+plt.figure(figsize=(10,8))
+#barh: xticks & yticks get and set the current tick locations and labels of the x & y-axis.
+plt.barh(yticks,xticks[0])
+plt.title("Month wise temperature data of 2016")
+plt.xlabel("Temperature in degree celsius")
+plt.ylabel("Month")
+plt.show()
+#From the above graph it is clear that May month recorded highest temperature around 35 degree celsius
