@@ -7,3 +7,5 @@ from sklearn.metrics import ConfusionMatrixDisplay
 ConfusionMatrixDisplay.from_predictions(actual_set,predicted_set)
 from sklearn.metrics import classification_report
 print(classification_report(actual_set,predicted_set))
+from sklearn.metrics import accuracy_score
+accuracy_score(actual, predicted)
