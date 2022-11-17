@@ -1,8 +1,8 @@
 import numpy as np 
-predicted_set = np.array(list(np.ones(45))+list(np.zeros(55)))
-predicted_set
-actual_set = np.array(list(np.ones(40))+list(np.zeros(52))+list(np.ones(8)))
-actual_set
+actual_set = np.array(list(np.ones(45))+list(np.zeros(55)))
+np.array(actual_set)
+predicted_set = np.array(list(np.ones(40))+list(np.zeros(52))+list(np.ones(8)))
+np.array(predicted_set)
 from sklearn.metrics import ConfusionMatrixDisplay
 ConfusionMatrixDisplay.from_predictions(actual_set,predicted_set)
 from sklearn.metrics import classification_report
